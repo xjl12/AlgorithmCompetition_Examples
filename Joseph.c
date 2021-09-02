@@ -32,10 +32,11 @@ int main()
 {
     int k, results[KMAX + 1];
     char data[2 * KMAX + 1],
-        *p_data;                //指向待处决者
-    for (k = 1; k <= KMAX; k++) // k从1到13循环取值，构建表
+        flag,
+        *p_data;                          //指向待处决者
+    for (k = 1; k <= KMAX; k++, flag = 0) // k从1到13循环取值，构建表
     {
-        for (int m = k + 1;; m++)
+        for (int m = k + 1;; m = flag ? m + k : m + 1, flag = !flag)
         {
             int num = 2 * k; //num指示当前剩余人数
             memset(data, GOOD, k);
