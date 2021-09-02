@@ -36,7 +36,7 @@ int main()
         *p_data;                //指向待处决者
     for (k = 1; k <= KMAX; k++) // k从1到13循环取值，构建表
     {
-        for (int m = k + 1;; flag = !flag, m = flag ? m + k + 1 : m + 1)
+        for (int m = k + 1;; flag = !flag, m = flag ? m + k : m + 1)
         {
             int num = 2 * k; //num指示当前剩余人数
             memset(data, GOOD, k);
